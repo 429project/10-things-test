@@ -5,8 +5,8 @@
 }
 #title-box {
   text-align: center;
-  animation: fade-in 0.5s ease-out 0.3s both, 
-          going-down 0.5s ease-out 0.3s both;
+  animation: fade-in 0.2s ease-out 0.2s both, 
+          going-down 0.2s ease-out 0.2s both;
 }
 #title-box > div {
   margin: 10px 0 auto;
@@ -40,8 +40,8 @@ hr {
   border: 1px dashed #888;
 }
 .w-line {
-  animation: fade-in 0.4s ease-out 0.9s both, 
-          going-down 0.4s ease-out 0.9s both;
+  animation: fade-in 0.4s ease-out 0.2s both, 
+          going-down 0.4s ease-out 0.2s both;
 }
 #welcome > p:first-of-type {
   padding: 0 5%;
@@ -74,8 +74,8 @@ hr {
   font-weight: 600;
   font-size: 32px;
   font-size: 2rem;
-  animation: fade-in 0.5s ease-out 1.4s both, 
-          going-down 0.5s ease-out 1.4s both,
+  animation: fade-in 0.6s ease-out 0.2s both, 
+          going-down 0.6s ease-out 0.2s both,
           start-flicker 2.5s infinite;
   cursor: pointer;
 }  
