@@ -5,34 +5,11 @@ const u_name = document.querySelector('input[type=text]');
 const wrap = document.getElementById('wrap');
 const tabletMQL = window.matchMedia("all and (min-width: 768px)");
 const pcMQL = window.matchMedia("all and (min-width: 1024px)");
-const ENDPOINT = 10;
+const ENDPOINT = 12;
 const select = [];
 let qIdx = -1;
 
-// const goTo = (dest) => {
-//   let elem;
-//   let elemTop;
-//   if (dest === 'artist') {
-//     elem = document.getElementById('intro-box');
-//   } else {
-//     elem = document.getElementById('share-box');
-//   }
-//   elemTop = window.pageYOffset + elem.getBoundingClientRect().top;
-//   if (pcMQL.matches) {
-//     elemTop -= 150;
-//   } else if (tabletMQL.matches) {
-//     elemTop -= 115;
-//   } else {
-//     elemTop -= 60;
-//   }
-//   window.scroll({
-//     behavior: 'smooth',
-//     left: 0,
-//     top: elemTop
-//   });
-// }
-// const goArtist = () => goTo('artist');
-// const goShare = () => goTo('share');
+const url = 'https://429project.github.io/dance-type-test';
 
 const copy = () => {
   const tmp = document.createElement('textarea');
@@ -46,27 +23,66 @@ const copy = () => {
 const calcScore = () => {
   let point = 0;
   for (let i = 0; i < ENDPOINT; i++) {
-    point += qnaList[i].a[select[i]].score;
+    digit = 10 ** ((ENDPOINT - i - 1) / 3);
+    point += qnaList[i].a[select[i]].score * digit ;
   }
+  console.log(point);
   return point;
 }
 
 const sortResult = (point) => {
-  let num = 0;
-  if (point <= 20) {
-    num = 0;
-  } else if (point <= 30) {
-    num = 1;
-  } else if (point <= 40) {
-    num = 2;
-  } else if (point <= 50) {
-    num = 3;
-  } else if (point <= 60) {
-    num = 4;
+  let mbti = "";
+  if (point >= 2000) {
+    mbti += "E";
   } else {
-    num = 5;
+    mbti += "I";
   }
-  return num;
+
+  if (point % 1000 >= 200) {
+    mbti += "N";
+  } else {
+    mbti += "S";
+  }
+
+  if (point % 100 >= 20) {
+    mbti += "T";
+  } else {
+    mbti += "F";
+  }
+
+  if (point % 10 >= 2) {
+    mbti += "J";
+  } else {
+    mbti += "P"
+  }
+
+  console.log(mbti);
+
+  let grade = -1;
+
+  if (mbti == "ISFJ") {
+    grade = 0;
+  } else if (mbti == "ISTJ" || mbti == "ESTJ") {
+    grade = 1;
+  } else if (mbti == "INTP" || mbti == "ISTP") {
+    grade = 2;
+  } else if (mbti == "ISFP" || mbti == "ESFJ") {
+    grade = 3;
+  } else if (mbti == "INTJ") {
+    grade = 4;
+  } else if (mbti == "ENTJ" || mbti == "ENFP") {
+    grade = 5;
+  } else if (mbti == "INFP" || mbti == "INFJ") {
+    grade = 6;
+  } else if (mbti == "ESTP" || mbti == "ENFJ") {
+    grade = 7;
+  } else if (mbti == "ESFP") {
+    grade = 8;
+  } else {
+    grade = 9;
+  } 
+
+  return grade;
 }
 
 const goResult = () => {
@@ -81,23 +97,22 @@ const goResult = () => {
   const result = document.getElementById('result');
   const point = calcScore();
   const grade = sortResult(point);
-  const pTitle = document.querySelector('.p');
-  const res_point = document.querySelector('.point');
-  const pin = document.querySelector('.pin');
+  // const pTitle = document.querySelector('.p');
+  // const res_point = document.querySelector('.point');
+  // const pin = document.querySelector('.pin');
   const img_url = 'img/image-' + grade + '.png';
   const res_img = document.createElement('img');
   const res_img_div = document.querySelector('.art');
-  const animal = document.querySelector('.result');
+  const dance_type = document.querySelector('.result');
+  const comment = document.querySelector('.comment');
   const desc = document.querySelector('.res');
 
-  pTitle.innerHTML = u_name.value + ' 님의 점수는...';
-  res_point.innerHTML = point + '점';
-  pin.style.marginLeft = infoList[grade].mLeft;
   res_img.src = img_url;
   res_img.alt = infoList[grade].name;
   res_img.title = infoList[grade].name;
   res_img_div.appendChild(res_img);
-  animal.innerHTML = infoList[grade].name;
+  dance_type.innerHTML = infoList[grade].name;
+  comment.innerHTML = infoList[grade].comment;
   desc.innerHTML = infoList[grade].desc;
 
   setTimeout(() => {
@@ -139,7 +154,7 @@ const end = () => {
       calc.style.display = 'none';
       goResult();
     }, 400);
-  }, 9000);
+  }, 5000);
 }
 
 const addAnswer = (answerTxt, idx) => {
@@ -178,7 +193,7 @@ const goNext = () => {
   const qNum = qnaList[qIdx];
   const q = document.querySelector('.q');
 
-  status.style.width = (ENDPOINT * (qIdx + 1)) + '%';
+  status.style.width = ((qIdx + 1) / ENDPOINT * 100) + '%';
   q.innerHTML = qNum.q;
   qna.style.animation =
     'fade-in 0.3s ease-in-out 0.4s forwards, ' +
