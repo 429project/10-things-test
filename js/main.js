@@ -9,30 +9,30 @@ const ENDPOINT = 10;
 const select = [];
 let qIdx = -1;
 
-const goTo = (dest) => {
-  let elem;
-  let elemTop;
-  if (dest === 'artist') {
-    elem = document.getElementById('intro-box');
-  } else {
-    elem = document.getElementById('share-box');
-  }
-  elemTop = window.pageYOffset + elem.getBoundingClientRect().top;
-  if (pcMQL.matches) {
-    elemTop -= 150;
-  } else if (tabletMQL.matches) {
-    elemTop -= 115;
-  } else {
-    elemTop -= 60;
-  }
-  window.scroll({
-    behavior: 'smooth',
-    left: 0,
-    top: elemTop
-  });
-}
-const goArtist = () => goTo('artist');
-const goShare = () => goTo('share');
+// const goTo = (dest) => {
+//   let elem;
+//   let elemTop;
+//   if (dest === 'artist') {
+//     elem = document.getElementById('intro-box');
+//   } else {
+//     elem = document.getElementById('share-box');
+//   }
+//   elemTop = window.pageYOffset + elem.getBoundingClientRect().top;
+//   if (pcMQL.matches) {
+//     elemTop -= 150;
+//   } else if (tabletMQL.matches) {
+//     elemTop -= 115;
+//   } else {
+//     elemTop -= 60;
+//   }
+//   window.scroll({
+//     behavior: 'smooth',
+//     left: 0,
+//     top: elemTop
+//   });
+// }
+// const goArtist = () => goTo('artist');
+// const goShare = () => goTo('share');
 
 const copy = () => {
   const tmp = document.createElement('textarea');
@@ -221,33 +221,11 @@ const begin = () => {
 }
 
 const load = () => {
-  const msg = document.querySelector('.check-name');
   const start_btn = document.querySelector('.start');
-
-  u_name.addEventListener('blur', () => {
-    try {
-      if (u_name.value.length < 1) {
-        throw '이름을 입력하고 시작해 주세요.';
-      }
-      msg.innerHTML = '';
-    } catch (err) {
-      msg.innerHTML = err;
-    }
-  });
-
   start_btn.addEventListener('click', () => {
-    try {
-      if (u_name.value.length < 1) {
-        throw '이름을 입력하고 시작해 주세요.';
-      }
-      msg.innerHTML = '';
-      start_btn.disabled = true;
-      begin();
-    } catch (err) {
-      msg.innerHTML = err;
-    }
+    start_btn.disabled = true;
+    begin();
   });
-
 }
 
 window.onload = load();
