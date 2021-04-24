@@ -1,32 +1,3 @@
-/*#header {
-  position: fixed;
-  top: 0; left: 0;
-  z-index: 10;
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 5px;
-  width: 100%;
-  height: 0px;
-  box-shadow: #ddd 0 0 10px 5px;
-  background:rgb(252, 252, 252);
-}
-.logo {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-repeat: none;
-  background-position: center;
-  background-size: cover;
-  font-size: 0;
-  transition: opacity 0.5s;
-  opacity: 0.8;
-  cursor: pointer;
-}
-.logo:hover {
-  opacity: 1;
-}*/
-
 /* qna로 넘어갈 때 display: none; */
 #footer {
   z-index: 10;
@@ -37,13 +8,13 @@
   box-shadow: #ddd 0 0 15px 2px;
   background: rgb(252, 252, 252);
   font-weight: lighter;
-  animation: fade-in 0.3s ease-in-out 2s both;
+  animation: fade-in 0.3s ease-in-out 0.2s both;
   opacity: 0;
 }
 #footer > div {
   float: left;
   box-sizing: border-box;
-  margin: 10px 0;
+  /*margin: 0px 0;*/
   height: 30px;
 }
 .highlight {
@@ -61,18 +32,6 @@
 }
 
 @media all and (min-width: 768px) {
-  /* qna에서 margin-top을 없애야 함 */
-  /*#header {*/
-    /*margin: 0 10%;*/
-    /*padding: 12.5px;*/
-    /*width: 80%;*/
-    /*height: 0px;*/
-    /*border-radius: 20px;*/
-  /*}*/
-  /*.logo {*/
-    /*width: 55px;*/
-    /*height: 55px;*/
-  /*}*/
   #footer {
     margin: 40px 10% 0 10%;
     padding: 15px 30px;
@@ -93,17 +52,6 @@
 }
 
 @media all and (min-width: 1024px) {
-/*  #header {
-    margin: 0 15%;
-    padding: 15px;
-    width: 70%;
-    height: 0px;
-    border-radius: 30px;
-  }
-  .logo {
-    width: 70px;
-    height: 70px;
-  }*/
   #footer {
     margin: 60px 15% 0 15%;
     padding: 25px 30px;
@@ -119,12 +67,6 @@
 }
 
 @media all and (min-width: 1440px) {
-/*  #header {
-    margin: 0 22.5%;
-    padding: 15px;
-    width: 55%;
-    height: 0px;
-  }*/
   #footer {
     margin: 80px 22.5% 0 22.5%;
     padding: 25px 30px;
