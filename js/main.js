@@ -55,6 +55,8 @@ const sortResult = (point) => {
     mbti += "P"
   }
 
+  console.log(mbti);
+
   let grade = -1;
 
   if (mbti == "ISFJ") {
