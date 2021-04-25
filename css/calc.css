@@ -79,13 +79,13 @@
   .calc-bar {
     margin: 25vh 25vw 40px 25vw;
     width: 50%;
-    font-size: 20.8px;
+    font-size: 18px;
     font-size: 1.3rem;
     letter-spacing: 24px;
     letter-spacing: 1.5rem;
   }
   .wait {
-    font-size: 35.2px;
+    font-size: 24px;
     font-size: 2.2rem;
     font-weight: lighter;
     text-align: center;
