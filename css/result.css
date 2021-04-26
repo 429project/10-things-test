@@ -142,8 +142,8 @@
     padding: 20px 7.5% 0;
   }
   .artist {
-    font-size: 17.6px;
-    font-size: 1.1rem;
+    font-size: 10px;
+    font-size: 1rem;
   }
   .caution {
     padding: 5px 7.5%;
@@ -199,8 +199,8 @@
   .caution > p {
     line-height: 27.2px;
     line-height: 1.7rem;
-    font-size: 17.6px;
-    font-size: 1.1rem;
+    font-size: 12px;
+    font-size: 1rem;
   }
   .go-origin {
     margin: 20px 30% 0 30%;
@@ -264,7 +264,7 @@
   .caution > p {
     line-height: 28.8px;
     line-height: 1.8rem;
-    font-size: 19.2px;
-    font-size: 1.2rem;
+    font-size: 12px;
+    font-size: 1rem;
   }
 }
