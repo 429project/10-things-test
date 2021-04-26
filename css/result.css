@@ -39,7 +39,7 @@
   width: 85%;
   line-height: 28.8px;
   line-height: 1.8rem;
-  font-size: 15px;
+  font-size: 5px;
   font-size: 1.1rem;
   font-weight: 350;
 }
@@ -113,7 +113,7 @@
 .caution > p {
   line-height: 20.8px;
   line-height: 1.3rem;
-  font-size: 10px;
+  font-size: 16px;
   font-size: 0.95rem;
   font-weight: 400;
 }
@@ -151,8 +151,8 @@
   .caution > p {
     line-height: 24px;
     line-height: 1.5rem;
-    font-size: 5px;
-    font-size: 1rem;
+    font-size: 16px;
+    font-size: 1.2rem;
   }
 }
 
@@ -191,15 +191,16 @@
     margin: 0px 0 0px 0;
   }
   .artist {
-    margin-bottom: 5px;
+    margin-bottom: 30px;
   }
+
   .caution {
     padding: 10px 7.5%;
   }
   .caution > p {
     line-height: 27.2px;
     line-height: 1.7rem;
-    font-size: 6px;
+    font-size: 16px;
     font-size: 1.1rem;
   }
   .go-origin {
@@ -255,8 +256,8 @@
     width: 90%;
     line-height: 33.6px;
     line-height: 2.1rem;
-    font-size: 16px;
-    font-size: 1.2rem;
+    font-size: 5px;
+    font-size: 1.1rem;
   }
   .caution {
     padding: 20px 10%;
@@ -264,7 +265,7 @@
   .caution > p {
     line-height: 28.8px;
     line-height: 1.8rem;
-    font-size: 6px;
+    font-size: 16px;
     font-size: 1.1rem;
   }
 }
