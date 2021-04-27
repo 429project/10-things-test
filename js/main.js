@@ -24,7 +24,6 @@ const calcScore = () => {
   let point = 0;
   for (let i = 0; i < ENDPOINT; i++) {
     digit = 10 ** (Math.floor((ENDPOINT - i - 1) / 3));
-    console.log(digit);
     point += qnaList[i].a[select[i]].score * digit ;
   }
   console.log(point);
