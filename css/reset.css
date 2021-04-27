@@ -1,8 +1,15 @@
 @charset "utf-8";
 
-@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+#@font-face {
+    font-family: '국립박물관문화재단클래식B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식B.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식B.woff') format('woff');
 * {
-  font-family: 'Spoqa Han Sans', 'Sans-serif';
+  font-family: '국립박물관문화재단클래식B';
   transition: color 0.3s;
   transition: background-color 0.3s;
   box-sizing: border-box;
