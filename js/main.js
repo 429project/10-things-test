@@ -62,15 +62,15 @@ const sortResult = (point) => {
 
   if (mbti == "ISFJ") {
     grade = 0;
-  } else if (mbti == "ISTJ" || mbti == "ESTJ") {
+  } else if (mbti == "ISTJ" || mbti == "ISTP") {
     grade = 1;
-  } else if (mbti == "INTP" || mbti == "ISTP") {
+  } else if (mbti == "ENFP" || mbti == "INTP") {
     grade = 2;
   } else if (mbti == "ISFP" || mbti == "ESFJ") {
     grade = 3;
   } else if (mbti == "INTJ") {
     grade = 4;
-  } else if (mbti == "ENTJ" || mbti == "ENFP") {
+  } else if (mbti == "ESTJ" || mbti == "ENTJ") {
     grade = 5;
   } else if (mbti == "INFP" || mbti == "INFJ") {
     grade = 6;
